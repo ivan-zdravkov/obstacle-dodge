@@ -1,0 +1,18 @@
+<IfModule mod_mime.c>
+  AddEncoding br .br
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.js\.br$">
+    Header set Content-Encoding br
+    Header set Content-Type application/javascript
+  </FilesMatch>
+  <FilesMatch "\.css\.br$">
+    Header set Content-Encoding br
+    Header set Content-Type text/css
+  </FilesMatch>
+  <FilesMatch "\.html\.br$">
+    Header set Content-Encoding br
+    Header set Content-Type text/html
+  </FilesMatch>
+</IfModule>
